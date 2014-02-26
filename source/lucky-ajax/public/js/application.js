@@ -1,5 +1,12 @@
 $(document).ready(function () {
 
+  $('form').submit(function(e){
+    e.preventDefault();
+    $.post("/rolls",{}, function(data, textStatus, jqXHR) {
+      $('#die img').attr("src", data + ".png");
+    });
+  });
+
   // PSEUDO-CODE:
   //   1- intercept the form submission event using jQuery
   //   2- prevent the default action for that event from happening
