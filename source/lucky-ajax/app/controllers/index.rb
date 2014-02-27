@@ -9,8 +9,13 @@ post '/rolls' do
   # See: roll_if_value_is_nil method in the Roll model.
   value = params[:value] ? params[:value].to_i : nil
 
-  @roll = value ? Roll.create({ value: value }) : Roll.create
+  roll = value ? Roll.create({ value: value }) : Roll.create
 
-  json :die => @roll.value
+  # json :die => roll.value
   # erb :index # HINT: what does this do? what should we do instead?
+  redirect "/rolls/#{roll.id}.json"
+end
+
+get '/rolls/:roll_id.json' do
+  json :die => Roll.find(params[:roll_id]).value
 end
