@@ -16,9 +16,12 @@ require 'active_record'
 require 'logger'
 
 require 'sinatra'
+require 'sinatra/json'
+require 'json'
 require 'erb'
 
 require 'shotgun'
+
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))

@@ -5,6 +5,7 @@ gem 'pg'
 
 # Sinatra driver
 gem 'sinatra'
+gem 'sinatra-contrib'
 gem 'shotgun'
 
 # Use Thin for our web server
