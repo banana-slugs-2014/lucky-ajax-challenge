@@ -13,10 +13,12 @@ $(document).ready(function () {
     $.ajax({
       type: "POST",
       url: "/rolls",
+
       data: { value: roll },
       success: function(response){
           //change the dice picture
-        $('.die_pic').replaceWith('<img class="die_pic" src="/'+ roll + '.png" title="'+ roll+ '" alt="the roll">');
+        $('.die_pic').attr({src: '/' + roll + '.png', title: roll});
+        //$('.die_pic').replaceWith('<img class="die_pic" src="/'+ roll + '.png" title="'+ roll+ '" alt="the roll">');
       }
     })
 
