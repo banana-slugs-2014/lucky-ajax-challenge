@@ -3,13 +3,13 @@
   <p>This contrived app will simulate a roll of a 6-sided die.</p>
 
   <form method="post" action="/rolls">
-    <input type="submit" value="Roll the Die">
+    <input type="submit" value="Roll the Die" class="roll_button">
   </form>
 
   <div id="die">
-    <% if @roll %>
-      <img src="/<%= @roll.value %>.png" title="<%= @roll.value %>" alt="the roll">
-    <% end %>
+
+      <img src="/1.png" title="1" alt="the roll" class="die_pic">
+
   </div>
 
 </div>
